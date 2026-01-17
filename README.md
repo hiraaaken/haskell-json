@@ -36,8 +36,28 @@ main
 docker compose run --rm haskell runhaskell Main.hs
 ```
 
-### コンパイルして実行
+### コンパイルして実行（ワンライナー）
 
 ```bash
 docker compose run --rm haskell sh -c "ghc Main.hs -o main && ./main"
+```
+
+### コンテナ内でコンパイルして実行
+
+コンテナ内でシェルを起動：
+
+```bash
+docker compose run --rm haskell bash
+```
+
+コンテナ内でコンパイル：
+
+```bash
+ghc Main.hs -o main
+```
+
+実行：
+
+```bash
+./main
 ```
